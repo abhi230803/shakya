@@ -8,6 +8,12 @@ import tempfile
 import plotly.io as pio
 pio.renderers.default = "png"
 
+try:
+    import kaleido
+except ImportError:
+    import streamlit as st
+    st.error("Kaleido is not installed in the environment.")
+
 st.set_page_config(page_title="DYNAMIC CHART", layout="wide")
 st.title("📊 Dynamic Chart Builder")
 
