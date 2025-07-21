@@ -5,6 +5,8 @@ import io
 from fpdf import FPDF
 import os
 import tempfile
+import plotly.io as pio
+pio.renderers.default = "png"
 
 st.set_page_config(page_title="DYNAMIC CHART", layout="wide")
 st.title("📊 Dynamic Chart Builder")
@@ -34,17 +36,17 @@ if uploaded_file:
     conclusions = []
     fig_images = []
 
-    # def save_chart_as_image(fig):
-    #     try:
-    #         with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmpfile:
-    #             fig.write_image(tmpfile.name)
-    #             with open(tmpfile.name, "rb") as f:
-    #                 img_bytes = f.read()
-    #         os.remove(tmpfile.name)
-    #         return img_bytes
-    #     except Exception as e:
-    #         st.warning(f"Error saving chart image: {e}")
-    #         return None
+    def save_chart_as_image(fig):
+        try:
+            with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmpfile:
+                fig.write_image(tmpfile.name)
+                with open(tmpfile.name, "rb") as f:
+                    img_bytes = f.read()
+            os.remove(tmpfile.name)
+            return img_bytes
+        except Exception as e:
+            st.warning(f"Error saving chart image: {e}")
+            return None
 
     for i in range(chart_count):
         st.markdown(f"### Chart {i+1}")
