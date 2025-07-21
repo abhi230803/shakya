@@ -5,3 +5,4 @@ fpdf
 xlsxwriter
 openpyxl
 kaleido
+plotly-get-chrome
