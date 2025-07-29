@@ -16,6 +16,7 @@ except ImportError:
 
 st.set_page_config(page_title="DYNAMIC CHART", layout="wide")
 st.title("📊 Dynamic Chart Builder")
+st.markdown("**Developed by Himanshu Shakya**, [linkedin](https://www.linkedin.com/in/himanshu-shakya-9172b7358/)")
 
 uploaded_file = st.file_uploader("📤 Upload Excel or CSV file", type=["xlsx", "xls", "csv"])
 
