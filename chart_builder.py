@@ -177,5 +177,11 @@ if uploaded_file:
     else:
         st.warning("⚠️ No charts generated yet.")
 
-st.markdown("---")
-st.markdown("© 2025 | Developed by **Himanshu Shakya**")
+st.markdown("<hr style='margin-top: 50px;'>", unsafe_allow_html=True)
+
+footer_html = """
+    <div style="text-align: center; color: gray; font-size: 14px; padding-top: 10px;">
+        © 2025 | Developed by <strong>Himanshu Shakya</strong>
+    </div>
+"""
+st.markdown(footer_html, unsafe_allow_html=True)
