@@ -176,3 +176,6 @@ if uploaded_file:
             st.download_button("📘 Download Full Report", data=generate_full_report(fig_images, conclusions), file_name="full_report.pdf", mime="application/pdf")
     else:
         st.warning("⚠️ No charts generated yet.")
+
+st.markdown("---")
+st.markdown("© 2025 | Developed by **Himanshu Shakya**")
