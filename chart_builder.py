@@ -136,7 +136,7 @@ if uploaded_file:
         pdf = FPDF()
         pdf.add_page()
         pdf.set_font("Arial", size=12)
-        pdf.cell(0, 10, "Relay Fault Summary:", ln=True)
+        pdf.cell(0, 10, "Overall Summary:", ln=True)
         for i, text in enumerate(concs):
             clean_text = text.encode('latin-1', 'replace').decode('latin-1')
             pdf.multi_cell(0, 10, f"Chart {i+1}: {clean_text}")
@@ -156,7 +156,7 @@ if uploaded_file:
             os.remove(temp_img)
         pdf.add_page()
         pdf.set_font("Arial", size=12)
-        pdf.cell(0, 10, "Relay Fault Summary:", ln=True)
+        pdf.cell(0, 10, "Overall Summary:", ln=True)
         for i, text in enumerate(concs):
             clean_text = text.encode('latin-1', 'replace').decode('latin-1')
             pdf.multi_cell(0, 10, f"Chart {i+1}: {clean_text}")
