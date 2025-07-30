@@ -36,6 +36,9 @@ if uploaded_file:
             if selected:
                 df = df[df[col].isin(selected)]
 
+    shape = df.shape
+    st.success("Your data has {} rows and {} columns.".format(shape[0], shape[1]))
+
     st.markdown("## 📈 Build Your Charts")
 
     chart_count = st.number_input("How many charts would you like to create?", min_value=1, max_value=10, step=1, value=1)
